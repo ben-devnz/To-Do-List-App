@@ -13,6 +13,7 @@ namespace To_Do_List_App.ViewModel
     public class MainViewModel : INotifyPropertyChanged
     {
         // ==================== BOILERPLATE (INotifyPropertyChanged) ====================
+
         // Event required by INotifyPropertyChanged - notifies the UI of property changes
         public event PropertyChangedEventHandler? PropertyChanged;
 

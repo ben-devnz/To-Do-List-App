@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
 
+// ==================== BOILERPLATE (RelayCommand) ====================
+
 namespace To_Do_List_App.Commands
 {
     public class RelayCommand : ICommand
