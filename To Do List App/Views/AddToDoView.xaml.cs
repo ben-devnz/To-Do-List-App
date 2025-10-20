@@ -11,17 +11,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using To_Do_List_App.ViewModel;
 
 namespace To_Do_List_App.Views
 {
     /// <summary>
-    /// Interaction logic for AddTask.xaml
+    /// Interaction logic for AddToDoView.xaml
     /// </summary>
-    public partial class AddTask : Window
+    public partial class AddToDoView : Window
     {
-        public AddTask()
+        public AddToDoView()
         {
             InitializeComponent();
+            DataContext = new AddToDoViewModel(this);
         }
     }
 }

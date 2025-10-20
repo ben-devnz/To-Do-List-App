@@ -5,6 +5,8 @@ using System.Windows;
 using System.Windows.Input; // for ICommand
 using To_Do_List_App.Commands; // for RelayCommand
 using To_Do_List_App.Models;
+using To_Do_List_App.Views;
+
 
 namespace To_Do_List_App.ViewModel
 {
@@ -99,7 +101,7 @@ namespace To_Do_List_App.ViewModel
         // ==================== PRIVATE METHODS ====================
         private void AddTask()
         {
-            // Create a new Task
+            /*      // Create a new Task
             // Basic implementation until the new AddToDoView is working
             var newTask = new ToDoItem
             {
@@ -111,7 +113,22 @@ namespace To_Do_List_App.ViewModel
             _manager.AddTask(newTask);
 
             // Add to ViewModel collection (UI will auto-update)
-            Tasks.Add(newTask);
+            Tasks.Add(newTask);*/
+            var addWindow = new AddToDoView();
+            bool? result = addWindow.ShowDialog();
+            if (result == true)
+            {
+                var vm = addWindow.DataContext as AddToDoViewModel;
+
+                var newTask = new ToDoItem
+                {
+                    Name = vm.Name,
+                    Details = vm.Details,
+                };
+
+                _manager.AddTask(newTask);
+                Tasks.Add(newTask);
+            }
         }
 
         // Deletes the currently selected task
